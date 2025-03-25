@@ -115,7 +115,6 @@ llm-chat-app/
 ├── requirements.txt              # Python dependencies
 ├── README.md                     # This file
 ├── chat-interface-app.png        # (Optional) UI screenshot
-└── venv_llm_chatapp/             # Virtual environment directory (should be in .gitignore)
 ```
 
 ## Contributing
