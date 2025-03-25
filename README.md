@@ -1,128 +1,138 @@
-**Chat with Local AI Models using Streamlit, Ollama, and LlamaIndex
-**
-This project is a real-time chatbot built with:
-
-- Streamlit — for the interactive web UI
-- Ollama — to run local LLMs like Llama3, Mistral, or Phi3
-- LlamaIndex — to abstract prompts and enhance LLM interaction
-
-100% local and offline — No API keys required. Your data stays on your machine.
+# Chat with AI Models Using Streamlit, Ollama, and LlamaIndex (macOS)
 
 
-
-⸻
-
-🚀 Features
-	•	🔁 Real-time chat with response streaming
-	•	🧠 Choose between multiple LLMs: Llama3, Phi3, Mistral7B
-	•	🎛 Sidebar model selector
-	•	🐛 Logging built-in for monitoring/debugging
-	•	🔌 Easily extendable with document loaders, vector search, or RAG
-
-⸻
-
-📸 Screenshot
-
-(Optional: Replace with your real screenshot image)
+<img width="1491" alt="Screenshot 2025-03-25 at 7 25 58 AM" src="https://github.com/user-attachments/assets/87bc04db-3860-432d-8a52-f33f04297b98" />
 
 
-⸻
+This repository contains the code for a chat application specifically designed for **macOS**, leveraging **Streamlit**, **Ollama**, and **LlamaIndex** to interact with users in real time. The app allows users to select from multiple local AI models and receive streaming responses instantly — all while keeping your data local and private. The application is optimized to run smoothly in **VS Code**.
 
-📦 Requirements
-	•	Python 3.9 or higher
-	•	Ollama installed and running (ollama serve)
-	•	Supported model pulled (e.g., ollama pull llama3)
-	•	macOS users: llama-index-llms-ollama is required
+## Features
 
-⸻
+- Real-time chat interface using Streamlit.
+- Integration with Ollama LLMs via LlamaIndex.
+- Sidebar model selection (supports Llama3, Phi3, and Mistral7B).
+- Local-first: No API keys or cloud dependency.
+- Streaming responses and session-managed chat history.
+- Logging for debugging and monitoring.
 
-🛠️ Installation & Setup
+## Requirements
 
-1. Clone the Repository
+- macOS operating system.
+- Python 3.9 or higher.
+- Ollama installed and running ([Ollama Website](https://ollama.com)).
+- Streamlit.
+- LlamaIndex with Ollama integration (`llama-index-llms-ollama`).
+- VS Code (recommended IDE).
 
-git clone https://github.com/your-username/llm-chat-app.git
-cd llm-chat-app
+## Installation & Setup
 
-2. Create a Virtual Environment
+### 1. Clone the Repository
 
+Open VS Code terminal:
+
+```bash
+git clone https://github.com/balaji4991512/Local-LLM-Chat-App
+cd Local-LLM-Chat-App
+code .
+```
+
+### 2. Create a Virtual Environment
+
+In the VS Code terminal, run:
+
+```bash
 python3 -m venv venv_llm_chatapp
+```
+
+### 3. Activate the Virtual Environment
+
+In the VS Code terminal, activate your virtual environment:
+
+```bash
 source venv_llm_chatapp/bin/activate
+```
 
-3. Install Python Dependencies
+### 4. Install Python Dependencies
 
+Install from `requirements.txt` in VS Code terminal:
+
+```bash
 pip install -r requirements.txt
+```
 
-Or manually:
+*Or install manually:*
 
+```bash
 pip install streamlit llama-index llama-index-llms-ollama
+```
 
-4. Pull a Model with Ollama
+### 5. Pull a Model Using Ollama
 
-Make sure Ollama is installed and running. Then:
+Make sure Ollama is installed and running, then pull the desired model from the VS Code terminal:
 
-ollama pull llama3  # or mistral, phi3, etc.
+```bash
+ollama pull llama3
+```
 
+*You can also pull other models like `mistral` or `phi3` if needed.*
 
+### 6. Run the Application
 
-⸻
+In VS Code terminal, run:
 
-▶️ Running the App
-
+```bash
 streamlit run ollama-streamlit-app.py
+```
 
-Then open http://localhost:8501 in your browser.
+This will direct the browser to open the app.
 
-⸻
+## Usage
 
-💬 Usage Guide
-	1.	Choose a model from the sidebar (e.g., Llama3, Phi3, Mistral)
-	2.	Type your question in the chat box
-	3.	View the real-time streamed response from the selected model
+1. Open your web browser and navigate to the redirected link.
+2. Select a model from the sidebar (e.g., Llama3, Phi3, or Mistral7B).
+3. Enter your question in the chat input box and press Enter.
+4. The app streams the selected model's response back to you in real time.
 
-⸻
+## Code Overview
 
-🧠 How It Works
-	•	ollama-streamlit-app.py handles the full UI + backend
-	•	Uses llama_index.llms.ollama.Ollama for connecting to local LLMs
-	•	Chat history is tracked using st.session_state
-	•	Supports streaming responses and error logging
+- **Initialization:** Sets up logging and initializes chat history in `st.session_state`.
+- **Model Selection:** Sidebar allows users to choose from supported LLMs (Llama3, Phi3, Mistral7B).
+- **Chat Input:** Captures user messages and appends them to the chat state.
+- **Streaming Responses:** Uses `llama_index.llms.ollama.Ollama` for connecting to local LLMs and streaming responses.
+- **Error Handling:** Catches exceptions and logs errors, displaying user-friendly messages in the UI.
 
-⸻
+## Example Interaction
 
-🧪 Example Interaction
-	1.	User selects Llama3
-	2.	User asks: “What is the capital of France?”
-	3.	Response: “The capital of France is Paris.”
+1. **User selects:** `"Llama3"` from the sidebar.
+2. **User asks:** "What is the PM of India?"
+3. **Response:** "TAs of my knowledge cutoff, the Prime Minister of India is Narendra Modi. He has been serving as the 15th and current Prime Minister of India since May 26, 2014."
 
-⸻
+## Project Structure
 
-📁 Project Structure
-
+```
 llm-chat-app/
 ├── ollama-streamlit-app.py       # Main app file
 ├── requirements.txt              # Python dependencies
-├── README.md                     # You're here!
+├── README.md                     # This file
 ├── chat-interface-app.png        # (Optional) UI screenshot
-└── venv_llm_chatapp/             # Your virtual environment (excluded in .gitignore)
+└── venv_llm_chatapp/             # Virtual environment directory (should be in .gitignore)
+```
 
+## Contributing
 
+Contributions are welcome! Feel free to open issues, suggest improvements, or submit a pull request.
 
-⸻
+## License
 
-🤝 Contributing
+This project is open-sourced.
 
-Contributions are welcome!
-Feel free to open issues, submit PRs, or suggest features.
+## Acknowledgements
 
-⸻
+This project uses the following libraries:
 
-📃 License
+- [Streamlit](https://streamlit.io/)
+- [Ollama](https://ollama.com/)
+- [LlamaIndex](https://www.llamaindex.ai/)
 
-This project is open-source and available under the MIT License.
+Feel free to reach out if you have any questions or need further assistance. Happy coding!
 
-⸻
-
-🙏 Acknowledgements
-	•	Streamlit
-	•	Ollama
-	•	LlamaIndex
