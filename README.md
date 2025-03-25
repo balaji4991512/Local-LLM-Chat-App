@@ -114,6 +114,7 @@ llm-chat-app/
 ├── ollama-streamlit-app.py       # Main app file
 ├── requirements.txt              # Python dependencies
 ├── README.md                     # This file
+├── code_explanation.md           # Explanation of the main code
 ├── chat-interface-app.png        # (Optional) UI screenshot
 ```
 
