@@ -1,5 +1,5 @@
-Chat with Local AI Models using Streamlit, Ollama, and LlamaIndex
-
+**Chat with Local AI Models using Streamlit, Ollama, and LlamaIndex
+**
 This project is a real-time chatbot built with:
 
 - Streamlit — for the interactive web UI
